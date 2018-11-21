@@ -11,24 +11,31 @@ import MoveArea  from '../components/MoveArea';
 
 const mapStateToProps = (state) => ({
   direction: state.character.direction,
-  isWalking: state.character.isWalking
+  isWalking: state.character.isWalking,
+  position: {
+    x: state.character.position.x,
+    y: state.character.position.y
+  }
 });
 
 const mapDispatchToProps = dispatch => ({
   moveCharacter(event) {
-    dispatch(whileWalking());
     switch (event.keyCode) {
       case 37:
         dispatch(moveCharacterLeft());
+        dispatch(whileWalking());
         break;
       case 38:
         dispatch(moveCharacterUp());
+        dispatch(whileWalking());
         break;
       case 39:
         dispatch(moveCharacterRight());
+        dispatch(whileWalking());
         break;
       case 40:
         dispatch(moveCharacterDown());
+        dispatch(whileWalking());
         break;
       default:
         break;

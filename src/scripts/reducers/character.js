@@ -9,7 +9,11 @@ import {
 
 const initState = {
   direction: "down",
-  isWalking: false
+  isWalking: false,
+  position: {
+    x: 0,
+    y: 0
+  }
 }
 
 export default (state = initState, action) => {
@@ -17,22 +21,26 @@ export default (state = initState, action) => {
     case MOVE_CHARACTER_UP:
       return {
         ...state,
-        direction: 'up'
+        direction: 'up',
+        y: state.position.y--
       }
     case MOVE_CHARACTER_RIGHT:
       return {
         ...state,
-        direction: 'right'
+        direction: 'right',
+        x: state.position.x++
       }
     case MOVE_CHARACTER_DOWN:
       return {
         ...state,
-        direction: 'down'
+        direction: 'down',
+        y: state.position.y++
       }
     case MOVE_CHARACTER_LEFT:
       return {
         ...state,
-        direction: 'left'
+        direction: 'left',
+        x: state.position.x--
       }
     case WHILE_WALKING:
       return {
