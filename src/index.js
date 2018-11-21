@@ -9,8 +9,6 @@ import rootReducer from './scripts/reducers/index';
 
 const store = createStore(rootReducer)
 
-console.log(store)
-
 ReactDOM.render(
     <Provider store={store}>
       <App />

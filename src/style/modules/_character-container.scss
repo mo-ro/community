@@ -1,0 +1,53 @@
+.character-container {
+  position: absolute;
+
+  > .sprite {
+    background-image: url("../images/character.png");
+    background-position: -48px 0px;
+    height: 48px;
+    width: 48px;
+
+    &[data-direction="left"] {
+      background-position: -48px -48px;
+    }
+
+    &[data-direction="right"] {
+      background-position: -48px -96px;
+    }
+
+    &[data-direction="up"] {
+      background-position: -48px -144px;
+    }
+
+    &[data-direction="down"] {
+      background-position: -48px 0px;
+    }
+
+    &[data-walking="true"] {
+      animation: walking .8s steps(1) infinite;
+    }
+  }
+}
+
+@keyframes walking {
+  0% {
+    background-position-x: -96px;
+
+  }
+
+  25% {
+    background-position-x: -48px;
+  }
+
+  50% {
+    background-position-x: 0px;
+  }
+
+  75% {
+    background-position-x: -48px;
+  }
+
+  100% {
+    background-position-x: -96px;
+  }
+}
