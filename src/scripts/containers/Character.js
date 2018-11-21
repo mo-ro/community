@@ -26,8 +26,22 @@ const mapDispatchToProps = dispatch => ({
     dispatch(moveCharacterLeft());
   },
   moveCharacter(event) {
-    console.log(event.keyCode, 9999)
-    dispatch(moveCharacterLeft());
+    switch (event.keyCode) {
+      case 37:
+        dispatch(moveCharacterLeft());
+        break;
+      case 38:
+        dispatch(moveCharacterUp());
+        break;
+      case 39:
+        dispatch(moveCharacterRight());
+        break;
+      case 40:
+        dispatch(moveCharacterDown());
+        break;
+      default:
+        break;
+    }
   }
 });
 

@@ -7,6 +7,7 @@ const MoveArea = ({ moveCharacter, direction, isWalking }) => {
   
   return (
     <div className="move-area" tabIndex="-1" onKeyDown={(event) => moveCharacter(event)}>
+      {direction}
       <Character />
     </div>
   )
