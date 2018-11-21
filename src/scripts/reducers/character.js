@@ -3,7 +3,8 @@ import {
   MOVE_CHARACTER_RIGHT,
   MOVE_CHARACTER_DOWN,
   MOVE_CHARACTER_LEFT,
-  WALKING,
+  WHILE_WALKING,
+  STOP_WALKING,
 } from '../constants/character';
 
 const initState = {
@@ -33,10 +34,15 @@ export default (state = initState, action) => {
         ...state,
         direction: 'left'
       }
-    case WALKING:
+    case WHILE_WALKING:
       return {
         ...state,
         isWalking: true
+      }
+    case STOP_WALKING:
+      return {
+        ...state,
+        isWalking: false
       }
     default:
       return {

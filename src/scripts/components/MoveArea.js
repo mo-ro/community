@@ -3,12 +3,13 @@ import characterImage from '../../images/character.png';
 import { connect } from 'react-redux';
 import Character from './Character';
 
-const MoveArea = ({ moveCharacter, direction, isWalking }) => {
-  
+const MoveArea = ({ moveCharacter, stopCharacter, direction, isWalking }) => {
+  console.log(isWalking, 7777)
   return (
-    <div className="move-area" tabIndex="-1" onKeyDown={(event) => moveCharacter(event)}>
+    <div className="move-area" tabIndex="-1" onKeyDown={(event) => moveCharacter(event)} onKeyUp={() => stopCharacter()}>
       {direction}
       <Character />
+      {String(isWalking)}
     </div>
   )
 }

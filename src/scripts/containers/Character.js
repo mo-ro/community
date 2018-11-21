@@ -4,6 +4,8 @@ import {
   moveCharacterRight,
   moveCharacterDown,
   moveCharacterLeft,
+  whileWalking,
+  stopWalking,
 } from '../actions/character';
 import MoveArea  from '../components/MoveArea';
 
@@ -13,19 +15,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  moveCharacterUp() {
-    dispatch(moveCharacterUp());
-  },
-  moveCharacterRight() {
-    dispatch(moveCharacterRight());
-  },
-  moveCharacterDown() {
-    dispatch(moveCharacterDown());
-  },
-  moveCharacterLeft() {
-    dispatch(moveCharacterLeft());
-  },
   moveCharacter(event) {
+    dispatch(whileWalking());
     switch (event.keyCode) {
       case 37:
         dispatch(moveCharacterLeft());
@@ -42,6 +33,9 @@ const mapDispatchToProps = dispatch => ({
       default:
         break;
     }
+  },
+  stopCharacter() {
+    dispatch(stopWalking());
   }
 });
 
