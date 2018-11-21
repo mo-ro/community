@@ -2,8 +2,8 @@ import React from 'react';
 
 const Character = ({ direction, isWalking, position }) => {
   const characterPositionStyle = {
-    top: position.y * 5,
-    left: position.x * 5
+    top: position.y * 48,
+    left: position.x * 48
   }
   return (
     <div className="character-container" style={characterPositionStyle}>

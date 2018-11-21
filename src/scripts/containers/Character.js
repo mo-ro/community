@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   moveCharacter(event) {
+    // console.log(event)
     switch (event.keyCode) {
       case 37:
         dispatch(moveCharacterLeft());
@@ -40,6 +41,9 @@ const mapDispatchToProps = dispatch => ({
       default:
         break;
     }
+  },
+  startCharacter() {
+    // dispatch(whileWalking());
   },
   stopCharacter() {
     dispatch(stopWalking());
