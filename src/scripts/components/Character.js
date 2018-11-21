@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import characterImage from '../../images/character.png';
 import { connect } from 'react-redux';
 
-const Character = ({ moveCharacter }) => {
-  console.log(moveCharacter)
+const Character = ({ moveCharacterUp, direction, isWalking }) => {
+  console.log(direction, isWalking)
   
   return (
-    <div className="character-container">
+    <div className="character-container" onClick={moveCharacterUp}>
       <div className="sprite">
         <img src={characterImage} alt="" className="image"/>
       </div>
@@ -14,8 +14,10 @@ const Character = ({ moveCharacter }) => {
   )
 }
 
-const mapPropsToState = state => ({
-  test: state.character.test
-});
+// const mapPropsToState = state => ({
+//   test: state.character.test
+// });
 
-export default connect(mapPropsToState)(Character);
+// export default connect(mapPropsToState)(Character);
+
+export default Character

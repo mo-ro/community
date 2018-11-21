@@ -1,18 +1,37 @@
 import { connect } from 'react-redux';
-import { moveCharacter } from '../actions/character';
-import Character from '../components/Character';
+import {
+  moveCharacterUp,
+  moveCharacterRight,
+  moveCharacterDown,
+  moveCharacterLeft,
+} from '../actions/character';
+import MoveArea  from '../components/MoveArea';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state) => ({
+  direction: state.character.direction,
+  isWalking: state.character.isWalking
+});
 
 const mapDispatchToProps = dispatch => ({
-  moveCharacter() {
-    dispatch(moveCharacter(
-
-    ));
+  moveCharacterUp() {
+    dispatch(moveCharacterUp());
+  },
+  moveCharacterRight() {
+    dispatch(moveCharacterRight());
+  },
+  moveCharacterDown() {
+    dispatch(moveCharacterDown());
+  },
+  moveCharacterLeft() {
+    dispatch(moveCharacterLeft());
+  },
+  moveCharacter(event) {
+    console.log(event.keyCode, 9999)
+    dispatch(moveCharacterLeft());
   }
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Character);
+)(MoveArea);
