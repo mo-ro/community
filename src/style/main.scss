@@ -5,8 +5,9 @@
 @import './settings/font';
 
 // pages
-@import './pages/_town-page';
+@import './pages/town-page';
 
 // modules
-@import './modules/_character-container';
-@import './modules/_move-area';
+@import './modules/character-container';
+@import './modules/move-area';
+@import './modules/town-tiles';

@@ -1,0 +1,22 @@
+.town-tiles {
+  position: absolute;
+
+  > .column {
+    display: flex;
+  }
+
+  > .column > .tile {
+    background-image: url("../images/town-tile.png");
+    height: 48px;
+    overflow: hidden;
+    width: 48px;
+
+    &.-grass_a {
+      background-position: -48px 0;
+    }
+
+    &.-sand_a {
+      background-position: -96px 0;
+    }
+  }
+}
