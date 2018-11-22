@@ -67,7 +67,6 @@ const mapDispatchToProps = dispatch => ({
       default:
         break;
     }
-    console.log(currentPosition, nextPosition)
     if(mapState[nextPosition.y][nextPosition.x] !== 0) {
       dispatch(cannotWalk());
     }

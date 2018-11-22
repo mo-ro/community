@@ -6,29 +6,41 @@ export default class TownPage extends Component {
 
   render() {
     const mapState = [
-      [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+      [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
     ]
 
     const mapTexture = [
-      ['sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'sa_a'],
-      ['sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a']
+      ['sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_a', 'gr_c', 'gr_d', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_d', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
+      ['sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a']
     ]
 
     return (

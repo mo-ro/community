@@ -11,12 +11,47 @@
     overflow: hidden;
     width: 48px;
 
+    // grass
     &.-grass_a {
-      background-position: -48px 0;
+      @include sprite(1, 0);
     }
 
+    &.-grass_b {
+      @include sprite(1, 1);
+    }
+
+    &.-grass_c {
+      @include sprite(6, 0);
+    }
+
+    &.-grass_d {
+      @include sprite(6, 1);
+    }
+
+
+    // sand
     &.-sand_a {
-      background-position: -96px 0;
+      @include sprite(2, 0);
+    }
+
+    &.-sand_b {
+      @include sprite(2, 1);
+    }
+
+    &.-sand_c {
+      @include sprite(3, 0);
+    }
+
+    &.-sand_d {
+      @include sprite(3, 1);
+    }
+
+    &.-sand_e {
+      @include sprite(7, 0);
+    }
+
+    &.-sand_f {
+      @include sprite(7, 1);
     }
   }
 }

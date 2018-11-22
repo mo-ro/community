@@ -12,7 +12,6 @@ export default class MoveArea extends React.Component {
   }
 
   handleDown() {
-    // console.log(this.props.mapState)
     this.props.judgeWalk(this.event, this.props.mapState, this.props.position)
     // if(!this.props.cannotWalk) {
     this.props.moveCharacter(this.event, this.props.cannotWalk)
@@ -25,7 +24,6 @@ export default class MoveArea extends React.Component {
   }
 
   render() {
-    // console.log(this.props.cannotWalk)
     const { moveCharacter, stopCharacter, direction, isWalking, position } = this.props
     return (
       <div className="move-area" tabIndex="-1" onKeyDown={(event) => {event.persist(); this.event = event}} onKeyUp={() => this.handleUp()}>

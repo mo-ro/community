@@ -1,0 +1,3 @@
+@mixin sprite($x: 0, $y: 0) {
+  background-position: calc(-48px * #{$x}) calc(-48px * #{$y});
+}
