@@ -5,14 +5,16 @@ import {
   MOVE_CHARACTER_LEFT,
   WHILE_WALKING,
   STOP_WALKING,
+  CANNOT_WALK,
 } from '../constants/character';
 
 const initState = {
   direction: "down",
   isWalking: false,
+  cannotWalk: false,
   position: {
-    x: 0,
-    y: 0
+    x: 3,
+    y: 3
   }
 }
 
@@ -22,25 +24,25 @@ export default (state = initState, action) => {
       return {
         ...state,
         direction: 'up',
-        y: state.position.y--
+        y: (action.payload.cannotWalk ? state.position.y : state.position.y--)
       }
     case MOVE_CHARACTER_RIGHT:
       return {
         ...state,
         direction: 'right',
-        x: state.position.x++
+        x: (action.payload.cannotWalk ? state.position.x : state.position.x++)
       }
     case MOVE_CHARACTER_DOWN:
       return {
         ...state,
         direction: 'down',
-        y: state.position.y++
+        y: (action.payload.cannotWalk ? state.position.y : state.position.y++)
       }
     case MOVE_CHARACTER_LEFT:
       return {
         ...state,
         direction: 'left',
-        x: state.position.x--
+        x: (action.payload.cannotWalk ? state.position.x : state.position.x--)
       }
     case WHILE_WALKING:
       return {
@@ -50,7 +52,13 @@ export default (state = initState, action) => {
     case STOP_WALKING:
       return {
         ...state,
-        isWalking: false
+        isWalking: false,
+        cannotWalk: false
+      }
+    case CANNOT_WALK:
+      return {
+        ...state,
+        cannotWalk: true
       }
     default:
       return {

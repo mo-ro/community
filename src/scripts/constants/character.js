@@ -5,3 +5,5 @@ export const MOVE_CHARACTER_LEFT = "MOVE_CHARACTER_LEFT";
 
 export const WHILE_WALKING = "WHILE_WALKING";
 export const STOP_WALKING = "STOP_WALKING";
+
+export const CANNOT_WALK = "CANNOT_WALK";

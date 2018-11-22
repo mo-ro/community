@@ -6,12 +6,14 @@ import {
   moveCharacterLeft,
   whileWalking,
   stopWalking,
+  cannotWalk,
 } from '../actions/character';
 import MoveArea  from '../components/MoveArea';
 
 const mapStateToProps = (state) => ({
   direction: state.character.direction,
   isWalking: state.character.isWalking,
+  cannotWalk: state.character.cannotWalk,
   position: {
     x: state.character.position.x,
     y: state.character.position.y
@@ -19,23 +21,22 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  moveCharacter(event) {
-    // console.log(event)
+  moveCharacter(event, cannotWalk) {
     switch (event.keyCode) {
       case 37:
-        dispatch(moveCharacterLeft());
+        dispatch(moveCharacterLeft(cannotWalk));
         dispatch(whileWalking());
         break;
       case 38:
-        dispatch(moveCharacterUp());
+        dispatch(moveCharacterUp(cannotWalk));
         dispatch(whileWalking());
         break;
       case 39:
-        dispatch(moveCharacterRight());
+        dispatch(moveCharacterRight(cannotWalk));
         dispatch(whileWalking());
         break;
       case 40:
-        dispatch(moveCharacterDown());
+        dispatch(moveCharacterDown(cannotWalk));
         dispatch(whileWalking());
         break;
       default:
@@ -43,10 +44,33 @@ const mapDispatchToProps = dispatch => ({
     }
   },
   startCharacter() {
-    // dispatch(whileWalking());
+    dispatch(whileWalking());
   },
   stopCharacter() {
     dispatch(stopWalking());
+  },
+  judgeWalk(event, mapState, currentPosition) {
+    const nextPosition = currentPosition;
+    switch (event.keyCode) {
+      case 37:
+        nextPosition.x--;
+        break;
+      case 38:
+        nextPosition.y--;
+        break;
+      case 39:
+        nextPosition.x++;
+        break;
+      case 40:
+        nextPosition.y++;
+        break;
+      default:
+        break;
+    }
+    console.log(currentPosition, nextPosition)
+    if(mapState[nextPosition.y][nextPosition.x] !== 0) {
+      dispatch(cannotWalk());
+    }
   }
 });
 

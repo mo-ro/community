@@ -5,26 +5,35 @@ import {
   MOVE_CHARACTER_LEFT,
   WHILE_WALKING,
   STOP_WALKING,
+  CANNOT_WALK,
 } from '../constants/character';
 
-export const moveCharacterUp = () => ({
+export const moveCharacterUp = (cannotWalk) => ({
   type: MOVE_CHARACTER_UP,
-  payload: {}
+  payload: {
+    cannotWalk: cannotWalk
+  }
 });
 
-export const moveCharacterRight = () => ({
+export const moveCharacterRight = (cannotWalk) => ({
   type: MOVE_CHARACTER_RIGHT,
-  payload: {}
+  payload: {
+    cannotWalk: cannotWalk
+  }
 });
 
-export const moveCharacterDown = () => ({
+export const moveCharacterDown = (cannotWalk) => ({
   type: MOVE_CHARACTER_DOWN,
-  payload: {}
+  payload: {
+    cannotWalk: cannotWalk
+  }
 });
 
-export const moveCharacterLeft = () => ({
+export const moveCharacterLeft = (cannotWalk) => ({
   type: MOVE_CHARACTER_LEFT,
-  payload: {}
+  payload: {
+    cannotWalk: cannotWalk
+  }
 });
 
 export const whileWalking = () => ({
@@ -34,5 +43,10 @@ export const whileWalking = () => ({
 
 export const stopWalking = () => ({
   type: STOP_WALKING,
+  payload: {}
+});
+
+export const cannotWalk = () => ({
+  type: CANNOT_WALK,
   payload: {}
 });

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Character from '../containers/Character';
+import TownPage from '../containers/TownPage';
 
 export default class TalkPage extends Component {
 
   render() {
     return (
       <div className="talk-page">
-        <Character />
+        <TownPage />
       </div>
     )
   }

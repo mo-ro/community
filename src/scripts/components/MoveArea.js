@@ -5,7 +5,6 @@ export default class MoveArea extends React.Component {
 
   constructor() {
     super()
-    this.flg = false
     this.event = 0
     setInterval(() => {
       this.handleDown();
@@ -13,27 +12,20 @@ export default class MoveArea extends React.Component {
   }
 
   handleDown() {
-    // this.props.startCharacter()
-    // console.log(this.props.isWalking)
-    // while(this.flg) {
-      // this.flg = true
-      // console.log('bb')
-      
-      // setTimeout(() => {
-        console.log(this.event, 'aa')
-        this.props.moveCharacter(this.event)
-      // }, 10000)
+    // console.log(this.props.mapState)
+    this.props.judgeWalk(this.event, this.props.mapState, this.props.position)
+    // if(!this.props.cannotWalk) {
+    this.props.moveCharacter(this.event, this.props.cannotWalk)
     // }
   }
 
   handleUp() {
-    // console.log('aaa')
-    this.flg = false
     this.event = 0
     this.props.stopCharacter()
   }
 
   render() {
+    // console.log(this.props.cannotWalk)
     const { moveCharacter, stopCharacter, direction, isWalking, position } = this.props
     return (
       <div className="move-area" tabIndex="-1" onKeyDown={(event) => {event.persist(); this.event = event}} onKeyUp={() => this.handleUp()}>
@@ -43,11 +35,3 @@ export default class MoveArea extends React.Component {
     )
   }
 }
-// } = ({ moveCharacter, stopCharacter, direction, isWalking, position }) => {
-//   // console.log(position)
-//   return (
-    
-//   )
-// }
-
-// export default MoveArea;
