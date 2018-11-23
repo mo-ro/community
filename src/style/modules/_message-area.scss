@@ -1,10 +1,35 @@
 .message-area {
-  > .display {
-
-  }
+  align-items: flex-end;
+  background: rgba(255, 255, 255, .8);
+  bottom: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+  position: absolute;
+  width: 960px;
 
   > .message {
-    background: red;
-    height: 30px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    margin-right: 20px;
+    max-height: 80px;
+    min-height: 40px;
+    overflow: scroll;
+    padding: 8px 10px;
+    width: 800px;
+  }
+
+  > .submit {
+    background: rgb(41, 165, 89);
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.6rem;
+    height: 40px;
+    width: 100px;
   }
 }

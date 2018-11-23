@@ -7,7 +7,7 @@ const Character = ({ direction, isWalking, position, submitting, message }) => {
   }
   return (
     <div className="character-container" style={characterPositionStyle}>
-      {submitting ? <p className="message">{message}</p> : null}
+      {message === "" ? null : <p className="message">{message}</p>}
       <div className="sprite" data-direction={direction} data-walking={isWalking}>
       </div>
     </div>
