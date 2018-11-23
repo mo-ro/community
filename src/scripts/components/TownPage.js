@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Character from '../containers/Character';
 import BgTiles from './BgTiles';
+import TownObjects from './TownObjects';
 
 export default class TownPage extends Component {
 
@@ -12,7 +13,7 @@ export default class TownPage extends Component {
       [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
       [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
       [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
-      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 0, 0, 0, 0, 0, 0, 9],
       [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
       [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
       [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
@@ -25,28 +26,29 @@ export default class TownPage extends Component {
     ]
 
     const mapTexture = [
-      ['sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_a', 'gr_c', 'gr_d', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_d', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_a', 'gr_c', 'gr_c', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_c', 'gr_d', 'gr_d', 'gr_c', 'gr_c', 'gr_c', 'sa_a'],
-      ['sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a', 'sa_a']
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a'],
+      ['gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'graa', 'gr_a', 'grca', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a', 'gr_a']
     ]
 
     return (
         <div className="town-page">
           <BgTiles mapTexture={mapTexture} />
           <Character mapState={mapState} />
+          <TownObjects />
         </div>
     )
   }

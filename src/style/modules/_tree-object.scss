@@ -1,0 +1,99 @@
+.tree-object {
+  position: absolute;
+
+  > .column {
+    display: flex;
+  }
+
+  > .column > .tile {
+    background-image: url("../images/town-tile.png");
+    background-repeat: no-repeat;
+    height: 48px;
+    overflow: hidden;
+    width: 48px;
+
+    &.-tree_null {
+      background-image: none;
+    }
+
+    &.-tree_a {
+      @include sprite(8, 2);
+    }
+
+    &.-tree_b {
+      @include sprite(9, 2);
+    }
+
+    &.-tree_c {
+      @include sprite(10, 2);
+    }
+
+    &.-tree_d {
+      @include sprite(11, 2);
+    }
+
+    &.-tree_e {
+      @include sprite(8, 3);
+    }
+
+    &.-tree_f {
+      @include sprite(9, 3);
+    }
+
+    &.-tree_g {
+      @include sprite(10, 3);
+    }
+
+    &.-tree_h {
+      @include sprite(11, 3);
+    }
+
+    &.-tree_i {
+      @include sprite(8, 4);
+    }
+
+    &.-tree_j {
+      @include sprite(9, 4);
+    }
+
+    &.-tree_k {
+      @include sprite(10, 4);
+    }
+
+    &.-tree_l {
+      @include sprite(11, 4);
+    }
+
+    &.-tree_m {
+      @include sprite(8, 5);
+    }
+
+    &.-tree_n {
+      @include sprite(9, 5);
+    }
+
+    &.-tree_o {
+      @include sprite(10, 5);
+    }
+
+    &.-tree_p {
+      @include sprite(11, 5);
+    }
+
+    &.-tree_q {
+      @include sprite(8, 6);
+    }
+
+    &.-tree_r {
+      @include sprite(9, 6);
+    }
+
+    &.-tree_s {
+      @include sprite(10, 6);
+    }
+
+    &.-tree_t {
+      @include sprite(11, 6);
+    }
+  }
+}

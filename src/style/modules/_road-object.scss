@@ -1,0 +1,40 @@
+.road-object {
+  position: absolute;
+
+  > .column {
+    display: flex;
+  }
+
+  > .column > .tile {
+    background-image: url("../images/road.png");
+    background-repeat: no-repeat;
+    background-size: 200%;
+    height: 48px;
+    overflow: hidden;
+    width: 48px;
+
+    &.-road_null {
+      background-image: none;
+    }
+
+    &.-road_a {
+      @include sprite(-0.5, 0);
+    }
+
+    &.-road_b {
+      @include sprite(0, 1);
+    }
+
+    &.-road_c {
+      @include sprite(0, 2);
+    }
+
+    &.-road_d {
+      @include sprite(0, 3);
+    }
+
+    &.-road_e {
+      @include sprite(10, 2);
+    }
+  }
+}

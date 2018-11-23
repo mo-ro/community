@@ -6,32 +6,33 @@
   }
 
   > .column > .tile {
-    background-image: url("../images/town-tile.png");
+    background-image: url("../images/field.png");
+    background-size: 1600%;
     height: 48px;
     overflow: hidden;
     width: 48px;
 
     // grass
     &.-grass_a {
-      @include sprite(1, 0);
+      @include sprite(0, 0);
     }
 
-    &.-grass_b {
-      @include sprite(1, 1);
-    }
+    // &.-grass_b {
+    //   @include sprite(1, 1);
+    // }
 
-    &.-grass_c {
-      @include sprite(6, 0);
-    }
+    // &.-grass_c {
+    //   @include sprite(0, 8);
+    // }
 
-    &.-grass_d {
-      @include sprite(6, 1);
-    }
+    // &.-grass_d {
+    //   @include sprite(6, 1);
+    // }
 
 
     // sand
     &.-sand_a {
-      @include sprite(2, 0);
+      @include sprite(7, 10);
     }
 
     &.-sand_b {
@@ -53,5 +54,43 @@
     &.-sand_f {
       @include sprite(7, 1);
     }
+
+    // road {
+    &.-road_a {
+      @include sprite(7, 1);
+    }
+
+    &.-road_b {
+      @include sprite(7, 5);
+    }
+
+    &.-road_c {
+      @include sprite(8, 5);
+    }
+
+    &.-road_d {
+      @include sprite(6, 6);
+    }
+
+    &.-road_e {
+      @include sprite(7, 6);
+    }
+
+    &.-road_f {
+      @include sprite(8, 6);
+    }
+
+    &.-road_g {
+      @include sprite(6, 7);
+    }
+
+    &.-road_h {
+      @include sprite(7, 7);
+    }
+
+    &.-road_i {
+      @include sprite(8, 7);
+    }
+
   }
 }

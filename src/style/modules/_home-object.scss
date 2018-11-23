@@ -1,0 +1,136 @@
+.house-object {
+  position: absolute;
+
+  > .layer {
+    position: absolute;
+  }
+
+  .layer > .column {
+    display: flex;
+  }
+
+  .layer > .column > .tile {
+    background-image: url("../images/town-tile.png");
+    // background-size: 1600%;
+    height: 48px;
+    overflow: hidden;
+    width: 48px;
+
+    &.-house_null {
+      @include sprite(0, 1);
+    }
+
+    &.-house_a {
+      @include sprite(20, 4);
+    }
+
+    &.-house_b {
+      @include sprite(21, 4);
+    }
+
+    &.-house_c {
+      @include sprite(0, 10);
+    }
+
+    &.-house_d {
+      @include sprite(19, 0);
+    }
+
+    &.-house_e {
+      @include sprite(16, 1);
+    }
+
+    &.-house_f {
+      @include sprite(17, 1);
+    }
+
+    &.-house_g {
+      @include sprite(18, 1);
+    }
+
+    &.-house_h {
+      @include sprite(19, 1);
+    }
+
+    &.-house_i {
+      @include sprite(16, 2);
+    }
+
+    &.-house_j {
+      @include sprite(17, 2);
+    }
+
+    &.-house_k {
+      @include sprite(18, 2);
+    }
+
+    &.-house_l {
+      @include sprite(19, 2);
+    }
+
+    &.-house_m {
+      @include sprite(16, 3);
+    }
+
+    &.-house_n {
+      @include sprite(17, 3);
+    }
+
+    &.-house_o {
+      @include sprite(18, 3);
+    }
+
+    &.-house_p {
+      @include sprite(19, 3);
+    }
+
+    &.-house_q {
+      @include sprite(20, 3);
+    }
+
+    &.-house_r {
+      @include sprite(21, 3);
+    }
+
+    &.-house_s {
+      @include sprite(10, 15);
+    }
+
+    &.-house_t {
+      @include sprite(11, 15);
+    }
+
+    &.-house_u {
+      @include sprite(1, 6);
+    }
+
+    &.-house_v {
+      @include sprite(21, 3);
+    }
+
+    &.-house_w {
+      @include sprite(20, 3);
+    }
+
+    &.-house_x {
+      @include sprite(21, 3);
+    }
+
+    &.-house_y {
+      @include sprite(20, 4);
+    }
+
+    &.-house_z {
+      @include sprite(21, 4);
+    }
+
+    &.-house_aa {
+      @include sprite(20, 4);
+    }
+
+    &.-house_ab {
+      @include sprite(21, 4);
+    }
+
+  }
+}

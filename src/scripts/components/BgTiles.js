@@ -21,10 +21,10 @@ export default class BgTiles extends React.Component {
       <div className="town-tiles">
         {this.props.mapTexture.map((column, index) => {
           return (
-            <div className="column">
+            <div className="column" key={index}>
               {this.props.mapTexture[index].map((tile, index) => {
                 let tileName = tiles[tile];
-                return (<div className={`tile -${tileName}`}></div>)
+                return (<div className={`tile -${tileName}`} key={index}></div>)
               })}
             </div>
           )
