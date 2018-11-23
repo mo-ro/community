@@ -1,5 +1,6 @@
 import {
-  SUBMIT_MESSAGE
+  SUBMIT_MESSAGE,
+  EDIT_MESSAGE,
 } from "../constants/message";
 
 const initState = {
@@ -12,10 +13,15 @@ export default (state = initState, action) => {
     case SUBMIT_MESSAGE:
       return {
         ...state,
-        message: action.payload.message,
         submitting: true
       }
       break;
+
+    case EDIT_MESSAGE:
+      return {
+        ...state,
+        message: action.payload.message
+      }
   
     default:
       return {

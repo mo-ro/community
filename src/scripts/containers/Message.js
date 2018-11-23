@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import {
-  submitMessage
+  submitMessage,
+  editMessage
 } from "../actions/message.js";
 import MessageArea from "../components/MessageArea";
 
@@ -9,8 +10,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  submitMessage(message) {
-    dispatch(submitMessage(message));
+  submitMessage() {
+    dispatch(submitMessage());
+  },
+  editMessage(message) {
+    dispatch(editMessage(message));
   }
 })
 
