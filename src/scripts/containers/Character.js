@@ -17,7 +17,9 @@ const mapStateToProps = (state) => ({
   position: {
     x: state.character.position.x,
     y: state.character.position.y
-  }
+  },
+  message: state.message.message,
+  submitting: state.message.submitting
 });
 
 const mapDispatchToProps = dispatch => ({

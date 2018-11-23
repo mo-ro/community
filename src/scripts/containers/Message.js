@@ -6,7 +6,7 @@ import {
 import MessageArea from "../components/MessageArea";
 
 const mapStateToProps = (state) => ({
-  submitting: state.message.submitting
+  message: state.message.message
 });
 
 const mapDispatchToProps = dispatch => ({
