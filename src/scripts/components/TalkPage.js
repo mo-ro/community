@@ -13,7 +13,17 @@ export default class TalkPage extends Component {
   }
 
   signIn() {
-    this.CurrentUser.set({uid: this.uid});
+    this.CurrentUser.set({
+      uid: this.uid,
+      direction: "down",
+      isWalking: false,
+      cannotWalk: false,
+      position: {
+        x: 3,
+        y: 3
+      },
+      message: ""
+    });
   }
 
   render() {

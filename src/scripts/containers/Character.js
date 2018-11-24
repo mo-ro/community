@@ -11,6 +11,7 @@ import {
 import MoveArea  from '../components/MoveArea';
 
 const mapStateToProps = (state) => ({
+  uid: state.auth.uid,
   direction: state.character.direction,
   isWalking: state.character.isWalking,
   cannotWalk: state.character.cannotWalk,

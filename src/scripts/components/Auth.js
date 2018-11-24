@@ -22,10 +22,7 @@ class Auth extends Component {
         // User is signed in.]
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
-        console.log(uid)
         this.props.signIn(uid);
-
-        console.log(this.props.uid, 'akakaka')
         // ...
       } else {
         // User is signed out.

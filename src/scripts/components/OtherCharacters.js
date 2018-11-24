@@ -10,19 +10,29 @@ export default class OtherCharacters extends React.Component {
 
     this.currentUsers.on("value", (snapshot) => {
       this.props.changeUserNum(snapshot.val());
-      console.log(snapshot.val(), 999)
     });
   }
   
   render() {
-    console.log(this.props)
-    let renderUsers = Object.keys(this.props.currentUsers).map((key) => {return this.props.currentUsers[key]})
+    // const { direction, isWalking, position, message, submitting } = this.props.currentUsers
+    // console.log(this.props.currentUsers, 876543)
+    let renderUsers = Object.keys(this.props.currentUsers).map((key) => {
+      console.log(key === this.props.currentUid)
+      if(key !== this.props.currentUid) {
+        console.log('aaaaaaaa')
+        return this.props.currentUsers[key];
+      }
+      return;
+    })
     return (
       <div className="others">
         {renderUsers.map((user) => {
-          return (
-            <Character position={{x: 5, y: 4}} />
-          )
+          if(user) {
+            return (
+              // <div className="a"></div>
+              <Character direction={user.direction} isWalking={user.isWalking} position={user.position} message={user.message} submitting={user.submitting} />
+            )
+          }
         })}
       </div>
     )

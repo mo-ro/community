@@ -5,7 +5,8 @@ import {
 import OtherCharacters from "../components/OtherCharacters";
 
 const mapStateToProps = (state) => ({
-  currentUsers: state.users.currentUsers
+  currentUsers: state.users.currentUsers,
+  currentUid: state.auth.uid
 });
 
 const mapDispatchToProps = dispatch => ({

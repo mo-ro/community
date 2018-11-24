@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Character = ({ direction, isWalking, position, submitting, message }) => {
+const Character = ({ uid, direction, isWalking, position, submitting, message }) => {
   const characterPositionStyle = {
     top: position.y * 48,
     left: position.x * 48
