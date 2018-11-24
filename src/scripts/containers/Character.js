@@ -15,10 +15,8 @@ const mapStateToProps = (state) => ({
   direction: state.character.direction,
   isWalking: state.character.isWalking,
   cannotWalk: state.character.cannotWalk,
-  position: {
-    x: state.character.position.x,
-    y: state.character.position.y
-  },
+  position_x: state.character.position_x,
+  position_y: state.character.position_y,
   message: state.message.message,
   submitting: state.message.submitting
 });
@@ -52,25 +50,26 @@ const mapDispatchToProps = dispatch => ({
   stopCharacter() {
     dispatch(stopWalking());
   },
-  judgeWalk(event, mapState, currentPosition) {
-    const nextPosition = currentPosition;
+  judgeWalk(event, mapState, currentPosition_x, currentPosition_y) {
+    let nextPosition_x = currentPosition_x;
+    let nextPosition_y = currentPosition_y;
     switch (event.keyCode) {
       case 37:
-        nextPosition.x--;
+        nextPosition_x--;
         break;
       case 38:
-        nextPosition.y--;
+        nextPosition_y--;
         break;
       case 39:
-        nextPosition.x++;
+        nextPosition_x++;
         break;
       case 40:
-        nextPosition.y++;
+        nextPosition_y++;
         break;
       default:
         break;
     }
-    if(mapState[nextPosition.y][nextPosition.x] !== 0) {
+    if(mapState[nextPosition_y][nextPosition_x] !== 0) {
       dispatch(cannotWalk());
     }
   }

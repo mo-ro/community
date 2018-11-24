@@ -17,9 +17,7 @@ export default class OtherCharacters extends React.Component {
     // const { direction, isWalking, position, message, submitting } = this.props.currentUsers
     // console.log(this.props.currentUsers, 876543)
     let renderUsers = Object.keys(this.props.currentUsers).map((key) => {
-      console.log(key === this.props.currentUid)
       if(key !== this.props.currentUid) {
-        console.log('aaaaaaaa')
         return this.props.currentUsers[key];
       }
       return;
@@ -27,10 +25,10 @@ export default class OtherCharacters extends React.Component {
     return (
       <div className="others">
         {renderUsers.map((user) => {
-          if(user) {
+          if(user && user.userData) {
             return (
               // <div className="a"></div>
-              <Character direction={user.direction} isWalking={user.isWalking} position={user.position} message={user.message} submitting={user.submitting} />
+              <Character direction={user.userData.direction} isWalking={user.userData.isWalking} position_x={user.userData.position_x} position_y={user.userData.position_y} message={user.userData.message} submitting={user.userData.submitting} />
             )
           }
         })}

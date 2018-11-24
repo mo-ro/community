@@ -13,8 +13,8 @@ const mapDispatchToProps = dispatch => ({
   signIn(uid) {
     dispatch(signIn(uid));
   },
-  signOut() {
-    dispatch(signOut());
+  signOut(uid) {
+    dispatch(signOut(uid));
   }
 });
 

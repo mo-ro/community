@@ -10,7 +10,9 @@ export const signIn = (uid) => ({
   }
 });
 
-export const signOut = () => ({
+export const signOut = (uid) => ({
   type: SIGN_OUT,
-  payload: {}
+  payload: {
+    uid: uid
+  }
 });

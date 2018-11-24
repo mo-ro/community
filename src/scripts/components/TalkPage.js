@@ -13,17 +13,22 @@ export default class TalkPage extends Component {
   }
 
   signIn() {
-    this.CurrentUser.set({
+    this.CurrentUser.child('userData').set({
       uid: this.uid,
       direction: "down",
       isWalking: false,
       cannotWalk: false,
-      position: {
-        x: 3,
-        y: 3
-      },
+      position_x: 3,
+      position_y: 3,
       message: ""
     });
+
+    window.addEventListener("beforeunload", () => { 
+      // this.CurrentUser.remove();
+      this.CurrentUser.child('userData').remove();
+        // ev.preventDefault(); 
+        // return ev.returnValue = 'Are you sure you want to close?'; 
+    }); 
   }
 
   render() {

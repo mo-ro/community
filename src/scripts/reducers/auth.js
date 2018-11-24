@@ -18,7 +18,8 @@ export default (state = initState, action) => {
 
     case SIGN_OUT:
       return {
-        ...state
+        ...state,
+        uid: null
       }
       break;
   

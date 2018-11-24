@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Character = ({ uid, direction, isWalking, position, submitting, message }) => {
+const Character = ({ uid, direction, isWalking, position_x, position_y, submitting, message }) => {
   const characterPositionStyle = {
-    top: position.y * 48,
-    left: position.x * 48
+    top: position_y * 48,
+    left: position_x * 48
   }
   return (
     <div className="character-container" style={characterPositionStyle}>

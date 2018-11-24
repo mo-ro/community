@@ -12,10 +12,8 @@ const initState = {
   direction: "down",
   isWalking: false,
   cannotWalk: false,
-  position: {
-    x: 3,
-    y: 3
-  }
+  position_x: 3,
+  position_y: 3
 }
 
 export default (state = initState, action) => {
@@ -24,25 +22,25 @@ export default (state = initState, action) => {
       return {
         ...state,
         direction: 'up',
-        y: (action.payload.cannotWalk ? state.position.y : state.position.y--)
+        y: (action.payload.cannotWalk ? state.position_y : state.position_y--)
       }
     case MOVE_CHARACTER_RIGHT:
       return {
         ...state,
         direction: 'right',
-        x: (action.payload.cannotWalk ? state.position.x : state.position.x++)
+        x: (action.payload.cannotWalk ? state.position_x : state.position_x++)
       }
     case MOVE_CHARACTER_DOWN:
       return {
         ...state,
         direction: 'down',
-        y: (action.payload.cannotWalk ? state.position.y : state.position.y++)
+        y: (action.payload.cannotWalk ? state.position_y : state.position_y++)
       }
     case MOVE_CHARACTER_LEFT:
       return {
         ...state,
         direction: 'left',
-        x: (action.payload.cannotWalk ? state.position.x : state.position.x--)
+        x: (action.payload.cannotWalk ? state.position_x : state.position_x--)
       }
     case WHILE_WALKING:
       return {

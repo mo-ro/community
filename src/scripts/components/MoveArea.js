@@ -15,7 +15,7 @@ export default class MoveArea extends React.Component {
   }
 
   handleDown() {
-    this.props.judgeWalk(this.event, this.props.mapState, this.props.position)
+    this.props.judgeWalk(this.event, this.props.mapState, this.props.position_x, this.props.position_y)
     // if(!this.props.cannotWalk) {
     this.props.moveCharacter(this.event, this.props.cannotWalk)
     // }
@@ -28,24 +28,23 @@ export default class MoveArea extends React.Component {
 
   componentDidUpdate(prevProps) {
     let updates = {};
-    // console.log(prevProps)
     for(let key in prevProps) {
-      if(prevProps[key] !== this.props[key] && key !== "mapState") {
-        console.log(prevProps[key], this.props[key], key);
+      if(prevProps[key] != this.props[key] && key !== "mapState") {
+        // console.log(prevProps[key], this.props[key], key);
         updates[key] = this.props[key]
       }
     }
 
-    this.CurrentUser.update(updates);
+    this.CurrentUser.child("userData").update(updates);
   }
 
   render() {
     // あとで分割せねば
-    const { uid, moveCharacter, stopCharacter, direction, isWalking, position, message, submitting } = this.props
+    const { uid, moveCharacter, stopCharacter, direction, isWalking, position_x, position_y, message, submitting } = this.props
     return (
       <div className="move-area" tabIndex="-1" onKeyDown={(event) => {event.persist(); this.event = event}} onKeyUp={() => this.handleUp()}>
         Direction: {direction} / Walking: {String(isWalking)}
-        <Character direction={direction} isWalking={isWalking} position={position} message={message} submitting={submitting} />
+        <Character direction={direction} isWalking={isWalking} position_x={position_x} position_y={position_y} message={message} submitting={submitting} />
       </div>
     )
   }
