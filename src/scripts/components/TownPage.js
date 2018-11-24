@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Character from '../containers/Character';
-// import OtherCharacters from '../containers/OtherCharacters';
+import OtherCharacters from '../containers/OtherCharacters';
 import BgTiles from './BgTiles';
 import TownObjects from './TownObjects';
+import firebase from "firebase"
 
 export default class TownPage extends Component {
 
@@ -49,7 +50,7 @@ export default class TownPage extends Component {
         <div className="town-page">
           <BgTiles mapTexture={mapTexture} />
           <Character mapState={mapState} />
-          {/* <OtherCharacters /> */}
+          <OtherCharacters />
           <TownObjects />
         </div>
     )

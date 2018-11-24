@@ -37,7 +37,7 @@ class Auth extends Component {
 
   render() {
     return (
-      <TalkPage />
+      this.props.uid ? <TalkPage uid={this.props.uid} /> : null
     );
   }
 }
