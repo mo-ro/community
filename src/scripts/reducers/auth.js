@@ -1,7 +1,7 @@
 import {
   SIGN_IN,
   SIGN_OUT
-} from '../constants/users';
+} from '../constants/auth';
 
 const initState = {
   uid: null
@@ -11,7 +11,8 @@ export default (state = initState, action) => {
   switch (action.type) {
     case SIGN_IN:
       return {
-        ...state
+        ...state,
+        uid: action.payload.uid
       }
       break;
 

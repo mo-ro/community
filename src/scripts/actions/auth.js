@@ -1,11 +1,13 @@
 import {
   SIGN_IN,
   SIGN_OUT
-} from "../constants/users";
+} from "../constants/auth";
 
-export const signIn = () => ({
+export const signIn = (uid) => ({
   type: SIGN_IN,
-  payload: {}
+  payload: {
+    uid: uid
+  }
 });
 
 export const signOut = () => ({

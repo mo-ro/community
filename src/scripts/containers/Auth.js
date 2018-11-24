@@ -2,16 +2,16 @@ import { connect } from "react-redux";
 import {
   signIn,
   signOut
-} from "../actions/users";
-import OtherCharacters from "../components/OtherCharacter";
+} from "../actions/auth";
+import Auth from "../components/Auth";
 
 const mapStateToProps = (state) => ({
-  uid: state.users.uid
+  uid: state.auth.uid
 });
 
 const mapDispatchToProps = dispatch => ({
-  signIn() {
-    dispatch(signIn());
+  signIn(uid) {
+    dispatch(signIn(uid));
   },
   signOut() {
     dispatch(signOut());
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(OtherCharacters);
+)(Auth);
