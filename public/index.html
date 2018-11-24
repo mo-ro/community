@@ -32,19 +32,12 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
     <script>
       // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDXbRYWWMe93YAsFbuYnxepWOfiSPoX0I4",
-        authDomain: "comunity-47633.firebaseapp.com",
-        databaseURL: "https://comunity-47633.firebaseio.com",
-        projectId: "comunity-47633",
-        storageBucket: "comunity-47633.appspot.com",
-        messagingSenderId: "570558314214"
-      };
-      firebase.initializeApp(config);
+      
     </script>
   </head>
   <body>
-    <h1>Firebaseてすと</h1>
+    <div id='root'></div>
+    <!-- <h1>Firebaseてすと</h1>
     <p>文字を入れると更新されます</p>
     <ul>
       <li id="chatText"></li>
@@ -67,7 +60,7 @@
     myChatAll.on("value", function(snapshot) { 
       document.getElementById("chatText").innerText = snapshot.val().text;
     });
-  </script>
+  </script> -->
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

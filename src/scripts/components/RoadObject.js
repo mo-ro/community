@@ -2,6 +2,7 @@ import React from "react";
 import * as tiles from "../constants/roadObject";
 
 export default class HouseObject extends React.Component {
+  
   render() {
 
     const roadTexture = [
