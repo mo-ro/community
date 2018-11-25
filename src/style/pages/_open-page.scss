@@ -1,5 +1,8 @@
 .opening-page {
+  align-items: center;
   background-color : #0033cc;
   background : linear-gradient(#3366ff, #0033cc, #000066);
+  display: flex;
+  justify-content: center;
   height: 100vh;
 }

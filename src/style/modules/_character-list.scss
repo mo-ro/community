@@ -2,12 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80%;
+  width: 90%;
 
   > .item {
     align-items: center;
-    // background-color : #0033cc;
-    // background : linear-gradient(#3366ff, #0033cc, #000066);
     border-radius: 4px;
     box-shadow :
       3px 3px 5px rgba(51, 51, 51, 0.7) inset,
@@ -22,17 +20,28 @@
     font-weight: bold;
     height: 180px;
     justify-content: center;
-    margin: 0 10px 80px;
+    margin: 0 20px 80px;
     position: relative;
     text-shadow : 2px 2px 2px rgba(51, 51, 51, 0.8);
     width: 160px;
 
     &:hover {
+      > .sprite {
+        // animation: raise-hand 1s steps(1) 1;
+      }
+
       > .name {
         &::after {
           display: block;
         }
       }
+    }
+
+    &[data-selected="true"] {
+      > .sprite {
+        animation: raise-hand 1s steps(1) infinite;
+      }
+      background-color: rgb(255, 145, 0);
     }
   }
 
@@ -81,5 +90,31 @@
 
   100% {
     @include sprite_large(0, 0);
+  }
+}
+
+@keyframes raise-hand {
+  0% {
+    @include sprite_large(0, 5);
+  }
+
+  20% {
+    @include sprite_large(4, 5);
+  }
+
+  40% {
+    @include sprite_large(0, 5);
+  }
+
+  60% {
+    @include sprite_large(4, 5);
+  }
+
+  80% {
+    @include sprite_large(0, 5);
+  }
+
+  100% {
+    @include sprite_large(4, 5);
   }
 }
