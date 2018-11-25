@@ -48,6 +48,14 @@ class Auth extends Component {
               this.props.uid ? <TalkPage /> : null
             )
           }} />
+          <Route path="/battle" render={() => {
+            return (
+              // this.props.battle ? <BattlePage /> : null
+              // <BattlePage />
+              <div></div>
+
+            )
+          }} />
         </div>
       </BrowserRouter>
       // this.props.uid ? <Opening uid={this.props.uid} /> : null

@@ -41,7 +41,7 @@ export default class MoveArea extends React.Component {
   render() {
     // あとで分割せねば
     const { uid, moveCharacter, stopCharacter, direction, isWalking, position_x, position_y, message, submitting, currentCharacter } = this.props
-    console.log(currentCharacter, 'aijsdfah')
+
     return (
       <div className="move-area" tabIndex="-1" onKeyDown={(event) => {event.persist(); this.event = event}} onKeyUp={() => this.handleUp()}>
         Direction: {direction} / Walking: {String(isWalking)}
