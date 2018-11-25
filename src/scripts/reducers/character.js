@@ -6,6 +6,7 @@ import {
   WHILE_WALKING,
   STOP_WALKING,
   CANNOT_WALK,
+  CHANGE_CHARACTER
 } from '../constants/character';
 
 const initState = {
@@ -13,7 +14,8 @@ const initState = {
   isWalking: false,
   cannotWalk: false,
   position_x: 3,
-  position_y: 3
+  position_y: 3,
+  currentCharacter: "a_1"
 }
 
 export default (state = initState, action) => {
@@ -57,6 +59,11 @@ export default (state = initState, action) => {
       return {
         ...state,
         cannotWalk: true
+      }
+    case CHANGE_CHARACTER:
+      return {
+        ...state,
+        currentCharacter: action.payload.currentCharacter
       }
     default:
       return {

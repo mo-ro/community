@@ -40,11 +40,11 @@ export default class MoveArea extends React.Component {
 
   render() {
     // あとで分割せねば
-    const { uid, moveCharacter, stopCharacter, direction, isWalking, position_x, position_y, message, submitting } = this.props
+    const { uid, moveCharacter, stopCharacter, direction, isWalking, position_x, position_y, message, submitting, currentCharacter } = this.props
     return (
       <div className="move-area" tabIndex="-1" onKeyDown={(event) => {event.persist(); this.event = event}} onKeyUp={() => this.handleUp()}>
         Direction: {direction} / Walking: {String(isWalking)}
-        <Character direction={direction} isWalking={isWalking} position_x={position_x} position_y={position_y} message={message} submitting={submitting} />
+        <Character direction={direction} isWalking={isWalking} position_x={position_x} position_y={position_y} message={message} submitting={submitting} currentCharacter={currentCharacter} />
       </div>
     )
   }

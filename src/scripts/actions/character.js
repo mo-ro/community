@@ -6,6 +6,7 @@ import {
   WHILE_WALKING,
   STOP_WALKING,
   CANNOT_WALK,
+  CHANGE_CHARACTER
 } from '../constants/character';
 
 export const moveCharacterUp = (cannotWalk) => ({
@@ -50,3 +51,10 @@ export const cannotWalk = () => ({
   type: CANNOT_WALK,
   payload: {}
 });
+
+export const changeCharacter = (currentCharacter) => ({
+  type: CHANGE_CHARACTER,
+  payload: {
+    currentCharacter: currentCharacter
+  }
+})

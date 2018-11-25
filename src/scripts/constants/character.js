@@ -7,3 +7,5 @@ export const WHILE_WALKING = "WHILE_WALKING";
 export const STOP_WALKING = "STOP_WALKING";
 
 export const CANNOT_WALK = "CANNOT_WALK";
+
+export const CHANGE_CHARACTER = "CHANGE_CHARACTER";

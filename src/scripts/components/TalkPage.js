@@ -6,10 +6,15 @@ import firebase from "firebase"
 export default class TalkPage extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props)
     this.uid = props.uid
     this.db = firebase.database();
     this.CurrentUser = this.db.ref(`/currentUsers/${this.uid}`);
     this.signIn();
+  }
+
+  componentWillUnmount() {
+    // this.CurrentUser.child('userData').remove();
   }
 
   signIn() {
@@ -24,10 +29,7 @@ export default class TalkPage extends Component {
     });
 
     window.addEventListener("beforeunload", () => { 
-      // this.CurrentUser.remove();
-      this.CurrentUser.child('userData').remove();
-        // ev.preventDefault(); 
-        // return ev.returnValue = 'Are you sure you want to close?'; 
+      // this.CurrentUser.child('userData').remove();
     }); 
   }
 

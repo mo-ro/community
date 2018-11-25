@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 // components
 import TalkPage from './TalkPage';
+import Opening from "../containers/Opening";
 
 class Auth extends Component {
   componentDidMount() {
@@ -22,6 +24,7 @@ class Auth extends Component {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         this.props.signIn(uid);
+        console.log(uid)
         // ...
       } else {
         // User is signed out.
@@ -32,8 +35,20 @@ class Auth extends Component {
   }
 
   render() {
+    console.log(this.props.uid)
     return (
-      this.props.uid ? <TalkPage uid={this.props.uid} /> : null
+      <BrowserRouter>
+        <div>
+          <Route path="/opening" component={Opening} />
+          <Route path="/talk" render={() => {
+            return (
+              // this.props.uid ? <TalkPage uid={this.props.uid} /> : <Redirect to="/opening" />
+              this.props.uid ? <TalkPage uid={this.props.uid} /> : null
+            )
+          }} />
+        </div>
+      </BrowserRouter>
+      // this.props.uid ? <Opening uid={this.props.uid} /> : null
     );
   }
 }
