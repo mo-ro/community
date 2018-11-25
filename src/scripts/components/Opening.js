@@ -17,6 +17,7 @@ export default class Opening extends React.Component {
   render() {
     return (
       <div className="opening-page">
+        <h1 className="heading">キャラクター選択</h1>
         <ul className="character-list">
           <li className="item" data-selected={this.props.currentCharacter === "a_1"} onClick={() => (this.props.changeCharacter("a_1", this.CurrentUser))}>
             <div className="sprite -a_1"></div>
@@ -59,7 +60,7 @@ export default class Opening extends React.Component {
             <p className="name">スルズ</p>
           </li>
         </ul>
-        <Link to="/talk" className="decide">決定</Link>
+        <Link to="/talk" className="decide">けってい</Link>
       </div>
     )
   }

@@ -26,12 +26,9 @@
     width: 160px;
 
     &:hover {
-      > .sprite {
-        // animation: raise-hand 1s steps(1) 1;
-      }
-
       > .name {
-        &::after {
+        &::after,
+        &::before {
           display: block;
         }
       }
@@ -63,6 +60,19 @@
   > .item > .name {
     bottom: -30px;
     position: absolute;
+
+    &::before {
+      background: rgba(0, 0, 0, .7);
+      border-radius: 100%;
+      content: "";
+      display: none;
+      filter: blur(2px);
+      height: 6px;
+      left: -36px;
+      position: absolute;
+      top: 14px;
+      width: 20px;
+    }
 
     &::after {
       background-image: url("../images/cursor.png");
