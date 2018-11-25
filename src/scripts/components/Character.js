@@ -16,9 +16,8 @@ const Character = ({ uid, direction, isWalking, position_x, position_y, submitti
     top: position_y * 48,
     left: position_x * 48
   }
-  console.log(currentCharacter)
+  console.log(currentCharacter, uid, direction)
   const characterImage = require(`../../images/characters/${currentCharacter}.png`);
-  console.log(characterImage)
   return (
     <div className="character-container" style={characterPositionStyle}>
       {message === "" ? null : <p className="message">{message}</p>}

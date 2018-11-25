@@ -8,10 +8,7 @@ export default class OtherCharacters extends React.Component {
     this.db = firebase.database();
     this.currentUsers = this.db.ref("/currentUsers");
 
-    console.log(props)
-
     this.currentUsers.on("value", (snapshot) => {
-      console.log(this.props)
       this.props.changeUserNum(snapshot.val());
     });
   }
@@ -28,7 +25,7 @@ export default class OtherCharacters extends React.Component {
         {renderUsers.map((user) => {
           if(user) {
             return (
-              <Character direction={user.userData.direction} isWalking={user.userData.isWalking} position_x={user.userData.position_x} position_y={user.userData.position_y} message={user.userData.message} submitting={user.userData.submitting} />
+              <Character direction={user.userData.direction} isWalking={user.userData.isWalking} position_x={user.userData.position_x} position_y={user.userData.position_y} message={user.userData.message} submitting={user.userData.submitting} currentCharacter={user.userData.currentCharacter} />
             )
           }
         })}

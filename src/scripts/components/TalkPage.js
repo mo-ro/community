@@ -6,7 +6,6 @@ import firebase from "firebase"
 export default class TalkPage extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.uid = props.uid
     this.db = firebase.database();
     this.CurrentUser = this.db.ref(`/currentUsers/${this.uid}`);
@@ -14,22 +13,23 @@ export default class TalkPage extends Component {
   }
 
   componentWillUnmount() {
-    // this.CurrentUser.child('userData').remove();
+    this.CurrentUser.child('userData').remove();
   }
 
   signIn() {
     this.CurrentUser.child('userData').set({
       uid: this.uid,
-      direction: "down",
-      isWalking: false,
-      cannotWalk: false,
-      position_x: 3,
-      position_y: 3,
-      message: ""
+      direction: this.props.direction,
+      isWalking: this.props.isWalking,
+      cannotWalk: this.props.cannotWalk,
+      position_x: this.props.position_x,
+      position_y: this.props.position_y,
+      message: this.props.message,
+      currentCharacter: "a_1"
     });
 
     window.addEventListener("beforeunload", () => { 
-      // this.CurrentUser.child('userData').remove();
+      this.CurrentUser.child('userData').remove();
     }); 
   }
 
