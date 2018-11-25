@@ -1,0 +1,85 @@
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+
+  > .item {
+    align-items: center;
+    // background-color : #0033cc;
+    // background : linear-gradient(#3366ff, #0033cc, #000066);
+    border-radius: 4px;
+    box-shadow :
+      3px 3px 5px rgba(51, 51, 51, 0.7) inset,
+      0 0 2px 3px #666666,
+      0 0 0   6px #ffffff,
+      0 0 2px 8px #666666;
+    color : #ffffff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    font-weight: bold;
+    height: 180px;
+    justify-content: center;
+    margin: 0 10px 80px;
+    position: relative;
+    text-shadow : 2px 2px 2px rgba(51, 51, 51, 0.8);
+    width: 160px;
+
+    &:hover {
+      > .name {
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  > .item > .sprite {
+    animation: stand 1s steps(1) infinite;
+    background-size: 900%;
+    height: 96px;
+    width: 96px;
+    
+    // @include sprite_large(2, 0);
+
+    @for $i from 1 through 10 {
+      &.-a_#{$i} {
+        background-image: url("../images/characters/battle/a_#{$i}.png");
+      }
+    }
+  }
+
+  > .item > .name {
+    bottom: -30px;
+    position: absolute;
+
+    &::after {
+      background-image: url("../images/cursor.png");
+      background-size: 26px;
+      background-repeat: no-repeat;
+      content: "";
+      display: none;
+      height: 20px;
+      left: -36px;
+      position: absolute;
+      top: 0;
+      width: 30px;
+    }
+  }
+}
+
+@keyframes stand {
+  0% {
+    @include sprite_large(0, 0);
+  }
+
+  50% {
+    @include sprite_large(1, 0);
+  }
+
+  100% {
+    @include sprite_large(0, 0);
+  }
+}
