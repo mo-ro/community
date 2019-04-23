@@ -41,7 +41,7 @@ class Auth extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Route path="/opening" component={Opening} />
+          <Route exact path="/" component={Opening} />
           <Route path="/talk" render={() => {
             return (
               // this.props.uid ? <TalkPage uid={this.props.uid} /> : <Redirect to="/opening" />
